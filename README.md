@@ -1,5 +1,5 @@
 
-# SWEN 3005 Assigment 1
+# SWEN 3000 Assigment 1
 
 ## FileExplorer
 
@@ -10,7 +10,7 @@
 
 You can try `git` in command line with Terminal.app
 
-    git clone https://github.com/kernel1983/SWEN-3005-Assigment-1.git
+    git clone https://github.com/kernel1983/SWEN-3000-Assigment-1.git
 
 3. Open the Terminal, run the server
 
