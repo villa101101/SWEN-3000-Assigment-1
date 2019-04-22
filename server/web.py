@@ -1,9 +1,18 @@
+import os
+
 import tornado.ioloop
 import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("Hello, world")
+        folder = self.get_argument("folder", "")
+        target = os.getcwd() + "/" + folder
+        objs = next(os.walk(target))
+        self.finish({"folders": objs[1],
+                    "files": objs[2],
+                    "current":folder,
+                    "parent":os.path.dirname(folder)})
+
 
 def make_app():
     return tornado.web.Application([

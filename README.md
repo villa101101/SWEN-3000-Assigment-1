@@ -10,7 +10,7 @@
 
 You can try `git` in command line with Terminal.app
 
-    git clone https://github.com/kernel1983/SWEN-3005-Assigment-1.git
+    git clone https://github.com/[YOUR_GITHUB_ID]/SWEN-3005-Assigment-1.git
 
 3. Open the Terminal, run the server
 
@@ -27,3 +27,20 @@ Go to `server` folder
 Make sure the web API service is available at port 8000
 
 4. Open Xcode and build the FileExplorer
+
+5. Test the API by visiting the address in web browser
+
+        http://127.0.0.1:8000/?folder=[FOLDER_NAME]
+
+The API return format in JSON as a dictionary
+
+    {
+        "folders": ["folder1", "folder2"],
+        "files": ["file1", "file2"],
+        "current": "[CURRENT_FOLDER_NAME]",
+        "parent": "[PARENT_FOLDER_NAME]",
+    }
+
+When `current` is equal to `parent` and they are both empty string, it means we are already at the root folder.
+
+
