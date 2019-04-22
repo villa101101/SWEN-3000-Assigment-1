@@ -14,21 +14,22 @@ You can try `git` in command line with Terminal.app
 
 3. Open the Terminal, run the server
 
-Make sure you have python 3.5 above
-
 Install tornado
 
     pip install tornado
 
-Go to `server` folder
+If you have python2.7 and there is no `pip` command, try this
 
-    python web.py
+    sudo easy_install pip
+    sudo pip install tornado
+
+Run `web.py` script
+
+    python server/web.py
     
 Make sure the web API service is available at port 8000
 
-4. Open Xcode and build the FileExplorer
-
-5. Test the API by visiting the address in web browser
+4. Test the API by visiting the address in web browser
 
         http://127.0.0.1:8000/?folder=[FOLDER_NAME]
 
@@ -42,5 +43,7 @@ The API return format in JSON as a dictionary
     }
 
 When `current` is equal to `parent` and they are both empty string, it means we are already at the root folder.
+
+5. Open Xcode and build the FileExplorer
 
 
