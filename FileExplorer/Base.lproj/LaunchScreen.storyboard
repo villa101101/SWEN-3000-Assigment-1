@@ -22,7 +22,7 @@
                                 <rect key="frame" x="-0.99999999999988631" y="270" width="414" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" red="0.30107677599999999" green="0.15158485969999999" blue="0.86768071339999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.013906565494835377" green="0.067579701542854309" blue="0.9895361065864563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launcher" translatesAutoresizingMaskIntoConstraints="NO" id="LYV-Y5-NJk">
@@ -30,7 +30,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0057538868859410286" green="0.81053018569946289" blue="0.99500578641891479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ycA-Nz-lWm"/>
                     </view>
                 </viewController>
