@@ -12,6 +12,8 @@
 		2B6575F1226CB58200D36135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6575EF226CB58200D36135 /* Main.storyboard */; };
 		2B6575F3226CB58600D36135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B6575F2226CB58600D36135 /* Assets.xcassets */; };
 		2B6575F6226CB58600D36135 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6575F4226CB58600D36135 /* LaunchScreen.storyboard */; };
+		C231F362227ACDFD0024A52E /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231F361227ACDFD0024A52E /* MyTableViewController.swift */; };
+		C231F364227B05780024A52E /* Explorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231F363227B05780024A52E /* Explorer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2B6575F2226CB58600D36135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B6575F5226CB58600D36135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B6575F7226CB58600D36135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C231F361227ACDFD0024A52E /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
+		C231F363227B05780024A52E /* Explorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explorer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				2B6575EB226CB58200D36135 /* AppDelegate.swift */,
 				2B6575ED226CB58200D36135 /* ViewController.swift */,
+				C231F361227ACDFD0024A52E /* MyTableViewController.swift */,
+				C231F363227B05780024A52E /* Explorer.swift */,
 				2B6575EF226CB58200D36135 /* Main.storyboard */,
 				2B6575F2226CB58600D36135 /* Assets.xcassets */,
 				2B6575F4226CB58600D36135 /* LaunchScreen.storyboard */,
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B6575EE226CB58200D36135 /* ViewController.swift in Sources */,
+				C231F362227ACDFD0024A52E /* MyTableViewController.swift in Sources */,
+				C231F364227B05780024A52E /* Explorer.swift in Sources */,
 				2B6575EC226CB58200D36135 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
