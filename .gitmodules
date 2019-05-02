@@ -1,0 +1,3 @@
+[submodule "FileExplorer/FileBrowser"]
+	path = FileExplorer/FileBrowser
+	url = https://github.com/marmelroy/FileBrowser.git
