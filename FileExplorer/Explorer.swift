@@ -21,12 +21,18 @@ class Explorer {
         return folders.count
     }
     func getfiles(array: [String]){
-        folders.insert(contentsOf: array, at: 0)
+        files.insert(contentsOf: array, at: 0)
     }
     func getfilenum() -> Int {
         return files.count
     }
     func getDisplayAmount() -> Int {
         return files.count + folders.count
+    }
+    func getFileNames() -> [String] {
+        return files
+    }
+    func getFolderNames() -> [String] {
+        return folders
     }
 }

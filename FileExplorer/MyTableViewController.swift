@@ -11,11 +11,16 @@ import UIKit
 
 class MyTableViewController: UITableViewController{
     
-    var folderNum: Int = 1
+    let dispatchGroup = DispatchGroup()
+    
+    var folderNum: Int = 0
     
     override func viewDidLoad() {
-//        self.tableView.setEditing(true, animated: true)
-        folderNum = session()
+        session()
+        
+        dispatchGroup.notify(queue: .main) {
+        
+        }
         print(folderNum)
     }
     
@@ -45,8 +50,10 @@ class MyTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 75.0
     }
-    var cellNum = 0;
-    func session() -> Int{
+    
+    
+    func session() -> Void{
+        dispatchGroup.enter()
         let urlString = "http://127.0.0.1:8000/"
         let url = URL(string:urlString)
         
@@ -63,8 +70,9 @@ class MyTableViewController: UITableViewController{
                 print(b)
                 obj.getfiles(array: filesInfo.files)
             
-                self.cellNum = obj.getDisplayAmount()
-                print(self.cellNum)
+                self.folderNum = obj.getDisplayAmount()
+                print(self.folderNum)
+                self.dispatchGroup.leave()
             
             }
                 
@@ -74,8 +82,11 @@ class MyTableViewController: UITableViewController{
             
             
             }.resume()
-        print(cellNum)
-        return cellNum
+        
+       
+        
+
+//        return self.folderNum
     }
     
     struct Breifcase: Decodable {
