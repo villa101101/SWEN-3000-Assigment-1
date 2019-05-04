@@ -35,4 +35,10 @@ class Explorer {
     func getFolderNames() -> [String] {
         return folders
     }
+    func getCurrent() -> String {
+        return current
+    }
+    func setCurrent(value:String) {
+        current = value
+    }
 }

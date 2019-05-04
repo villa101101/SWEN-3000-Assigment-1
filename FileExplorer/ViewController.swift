@@ -13,6 +13,7 @@ var folderNum: Int = 0
 var callnames: [String] = [""]
 var currentIndex = 0
 var fnames: [String] = [""]
+var currentdir = ""
 
 class ViewController: UIViewController {
     
@@ -64,6 +65,7 @@ class ViewController: UIViewController {
                 callnames.append(contentsOf: obj.getFolderNames())
                 callnames.append(contentsOf: obj.getFileNames())
                 fnames.append(contentsOf: obj.getFolderNames())
+                currentdir = obj.getCurrent()
 
                 
                 
@@ -139,29 +141,30 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         if (currentIndex < fnames.count){
             session2()
             dispatchGroup2.wait()
-            Toast.show(message: "done", controller: self)
             tb.reloadData()
         } else {
             Toast.show(message: "This is a file, there is no subdirectory available", controller: self)
         }
         
-       
-        
-        
-        
-        
-        
-        
-        
-    
         
     }
     
     func session2() {
         dispatchGroup2.enter()
+        if (currentdir.count > 1){
+            currentdir.remove(at: currentdir.startIndex)
+        } else {
+            currentdir = ""
+        }
+        
+        let subUrl = currentdir
         let urlString = "http://127.0.0.1:8000/?folder=/"
-        let parentUrl = urlString + fnames[currentIndex]
+        let parentUrl = urlString + subUrl + "/" + fnames[currentIndex]
         let url = URL(string:parentUrl)
+        print(parentUrl)
+        print(currentdir)
+        print(fnames[currentIndex])
+        
         
         let obj = Explorer()
         
@@ -172,12 +175,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                 let filesInfo = try JSONDecoder().decode(Breifcase.self, from: data!)
                 obj.getfolders(array: filesInfo.folders)
                 obj.getfiles(array: filesInfo.files)
+                obj.setCurrent(value: filesInfo.current)
                 
                 folderNum = obj.getDisplayAmount()
                 callnames.removeAll()
+                fnames.removeAll()
                 
                 callnames.append(contentsOf: obj.getFolderNames())
                 callnames.append(contentsOf: obj.getFileNames())
+                fnames.append(contentsOf: obj.getFolderNames())
+                currentdir = obj.getCurrent()
+                print("after obj  " + currentdir)
                 
                 
                 
