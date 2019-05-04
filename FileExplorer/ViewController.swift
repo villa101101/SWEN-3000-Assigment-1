@@ -24,7 +24,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        loadGif()
         session()
         dispatchGroup.wait()
         
@@ -34,15 +33,7 @@ class ViewController: UIViewController {
     
 
     }
-    
-//    func loadGif() {
-//        let jeremyGif = UIImage.gifImageWithName("giphy.gif")
-//
-//        let imageView = UIImageView(image: jeremyGif)
-//        imageView.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 150.0)
-//        view.addSubview(imageView)
-//    }
-    
+ //makes a connection the first time the user opens the app
     func session() {
         dispatchGroup.enter()
         let urlString = "http://127.0.0.1:8000/?folder=/"
@@ -54,6 +45,7 @@ class ViewController: UIViewController {
         URLSession.shared.dataTask(with: url!){(data, response, error) in
             
             do  {
+                //use the struct called Breifcase to collect the json data that is decoded
                 let filesInfo = try JSONDecoder().decode(Breifcase.self, from: data!)
                 obj.getfolders(array: filesInfo.folders)
                 obj.getfiles(array: filesInfo.files)
@@ -102,23 +94,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return folderNum
     }
     
+
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-//        let cellFullname = UITableViewCell()
-//        if indexPath.row == 0{
-//            cell= tableView.
-//            cell.backgroundColor = UIColor.green
-//        } else {
-//            cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath)
-//            cell.backgroundColor = UIColor.black
-//        }
-//        cell.backgroundColor = UIColor.darkGray
-        
-//        let cellFullname = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BetterTableViewCell")
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BetterTableViewCell")
+        cell?.backgroundColor = UIColor.darkGray
         
         
         cell?.textLabel?.text = callnames[indexPath.row]
@@ -128,10 +111,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         return "File Explorer"
     }
-    
-    
+
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 75.0
     }
@@ -148,7 +132,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         
     }
-    
+    //called each time the user navigates through the file explorer
     func session2() {
         dispatchGroup2.enter()
         if (currentdir.count > 1){
@@ -204,10 +188,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    
 }
 
-
+//use to manage a toast
 class Toast {
     static func show(message: String, controller: UIViewController) {
         let toastContainer = UIView(frame: CGRect())
