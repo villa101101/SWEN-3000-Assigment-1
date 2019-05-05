@@ -41,4 +41,10 @@ class Explorer {
     func setCurrent(value:String) {
         current = value
     }
+    func setParent(value:String) {
+        parent = value
+    }
+    func getParent () -> String {
+        return parent
+    }
 }
